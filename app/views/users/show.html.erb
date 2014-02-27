@@ -5,17 +5,14 @@
 
   <div class="panel panel-default col-md-8 text-left">
     <div class="pull-left">
-      <h4>Twets</h4>
+      <h4>Twets by <%= @user.username %></h4>
     </div>
     <div class="clearfix"></div>
     <hr />
     <ol class="list-unstyled">
       <% @twets.each do |twet| -%>
       <li>
-        <!-- make user name a link
         <%= content_tag :strong, twet.user.name, :class => 'pull-left text-middle' %>
-        -->
-        <a href="/<%= twet.user.username %>"><%= content_tag :strong, twet.user.name, :class => 'pull-left text-middle' %> </a>
         <%= content_tag :small, "@"+twet.user.username, :class => 'text-muted pad-10 text-middle' %>
         <%= content_tag :small, twet.created_at.strftime("%b %-d"), :class => 'text-muted text-middle pull-right' %>
         <div class="clearfix"></div>
@@ -29,4 +26,3 @@
     </ol>
   </div>
 </div>
-
