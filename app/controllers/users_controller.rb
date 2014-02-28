@@ -8,7 +8,8 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
-    @twets = @user.twets
+    @twets = @user.twets 
+    
   end
 
 end
