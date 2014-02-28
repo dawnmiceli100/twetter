@@ -8,6 +8,7 @@ Twetter::Application.routes.draw do
     resources :follows, :except => [:new, :edit, :show, :update]
     resources :twets, :except => [:new, :edit, :show, :update]
     resources :users, :only => [:show]
+    resources :retwets, :only => [:create, :destroy]
     root :to => 'follows#index', :as => :user_root
     get '/:username', to: 'users#show'
   end
